@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://db5fx8yv5d7qx"]
+
+[node name="Projectile" type="Node2D"]
+
+[node name="Image" type="Sprite2D" parent="."]

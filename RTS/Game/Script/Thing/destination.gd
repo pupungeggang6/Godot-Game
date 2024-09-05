@@ -6,10 +6,10 @@ func _ready():
     pass
     
 func _process(delta):
-    if node_player.moving == true:
+    if Var.player['moving'] == true:
         visible = true
-        position.x = node_player.destination.x
-        position.y = node_player.destination.y
+        position.x = Var.player['destination'].x
+        position.y = Var.player['destination'].y
         
     else:
         visible = false

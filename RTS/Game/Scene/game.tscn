@@ -1,20 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt1ell6b2wxph"]
+[gd_scene load_steps=8 format=3 uid="uid://dt1ell6b2wxph"]
 
+[ext_resource type="Script" path="res://Script/Scene/game.gd" id="1_7xhi8"]
 [ext_resource type="Script" path="res://Script/Thing/camera.gd" id="1_cekb6"]
 [ext_resource type="Texture2D" uid="uid://biimtg1pp6pyp" path="res://Image/Player.png" id="2_d75oe"]
 [ext_resource type="Texture2D" uid="uid://bsoc2e3uvh33y" path="res://Image/Destination.png" id="2_xyyb1"]
 [ext_resource type="Script" path="res://Script/Thing/player.gd" id="3_f7h56"]
 [ext_resource type="Script" path="res://Script/Thing/destination.gd" id="4_mgy4m"]
+[ext_resource type="PackedScene" uid="uid://cig00coyme0s6" path="res://Scene/SubScene/menu.tscn" id="7_6vpbv"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_7xhi8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("1_cekb6")
+[node name="ColorRect1" type="ColorRect" parent="."]
+offset_right = 2560.0
+offset_bottom = 2560.0
 
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(505, 411)
+position = Vector2(1280, 1280)
 texture = ExtResource("2_d75oe")
 script = ExtResource("3_f7h56")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("1_cekb6")
 
 [node name="Destination" type="Sprite2D" parent="."]
 visible = false
@@ -22,8 +30,45 @@ position = Vector2(-484, -218)
 texture = ExtResource("2_xyyb1")
 script = ExtResource("4_mgy4m")
 
+[node name="Projectile" type="Node2D" parent="."]
+
+[node name="Monster" type="Node2D" parent="."]
+
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Menu" parent="UI" instance=ExtResource("7_6vpbv")]
+visible = false
+position = Vector2(320, 200)
+
+[node name="ColorRect1" type="ColorRect" parent="UI"]
+offset_top = 640.0
+offset_right = 80.0
+offset_bottom = 720.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+offset_left = 80.0
+offset_top = 640.0
+offset_right = 160.0
+offset_bottom = 720.0
+color = Color(0.114102, 0.517841, 0.586119, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 640.0
+offset_right = 240.0
+offset_bottom = 720.0
+color = Color(0.376981, 0.443619, 0.835755, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="UI"]
+offset_left = 240.0
+offset_top = 640.0
+offset_right = 320.0
+offset_bottom = 720.0
+color = Color(1, 1, 0.152941, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="UI"]
+offset_left = 320.0
+offset_top = 640.0
+offset_right = 400.0
+offset_bottom = 720.0
+color = Color(0.769974, 0.272732, 0.492987, 1)
