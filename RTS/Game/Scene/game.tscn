@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt1ell6b2wxph"]
+
+[ext_resource type="Script" path="res://Script/Thing/camera.gd" id="1_cekb6"]
+[ext_resource type="Texture2D" uid="uid://biimtg1pp6pyp" path="res://Image/Player.png" id="2_d75oe"]
+[ext_resource type="Texture2D" uid="uid://bsoc2e3uvh33y" path="res://Image/Destination.png" id="2_xyyb1"]
+[ext_resource type="Script" path="res://Script/Thing/player.gd" id="3_f7h56"]
+[ext_resource type="Script" path="res://Script/Thing/destination.gd" id="4_mgy4m"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_cekb6")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(505, 411)
+texture = ExtResource("2_d75oe")
+script = ExtResource("3_f7h56")
+
+[node name="Destination" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-484, -218)
+texture = ExtResource("2_xyyb1")
+script = ExtResource("4_mgy4m")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
