@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://hnyxrxfxp56"]
+
+[ext_resource type="Material" uid="uid://ca3frhlnokjr7" path="res://Resources/dirt.tres" id="1_3uo0f"]
+[ext_resource type="ArrayMesh" uid="uid://brctsggyd5vun" path="res://model.obj" id="1_plv3l"]
+[ext_resource type="Script" path="res://mesh_instance_3d.gd" id="3_3cpv3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6p7d"]
+
+[node name="Player" type="Node3D"]
+
+[node name="Model" type="MeshInstance3D" parent="."]
+visible = false
+material_override = ExtResource("1_3uo0f")
+mesh = ExtResource("1_plv3l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_j6p7d")
+script = ExtResource("3_3cpv3")
