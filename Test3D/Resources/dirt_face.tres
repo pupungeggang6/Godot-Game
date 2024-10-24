@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dak6exiqsmmd0"]
-
-[ext_resource type="Texture2D" uid="uid://cdbmtwyvh3jk6" path="res://Image/DirtFace.png" id="1_pwi06"]
-
-[resource]
-shading_mode = 0
-albedo_texture = ExtResource("1_pwi06")
